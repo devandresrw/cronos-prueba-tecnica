@@ -1,0 +1,28 @@
+.button {
+  width: 100%;
+  background-color: #30FFD0;
+  color: #060613;
+  font-weight: 700;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 0.75rem;
+  transition: all 0.2s;
+  transform: scale(1);
+  box-shadow: 0 10px 15px -3px rgba(48, 255, 208, 0.2), 0 4px 6px -2px rgba(48, 255, 208, 0.1);
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.button:hover {
+  background-color: rgba(48, 255, 208, 0.9);
+}
+
+.button:active {
+  transform: scale(0.98);
+}

@@ -1,0 +1,26 @@
+.container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.text {
+  color: #64748b;
+  font-size: 0.875rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.button {
+  color: #30FFD0;
+  font-weight: 700;
+  margin-left: 0.25rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.button:hover {
+  text-decoration: underline;
+}

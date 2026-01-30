@@ -1,0 +1,33 @@
+.channelInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.name {
+  font-weight: 700;
+  color: white;
+  line-height: 1;
+}
+
+.subscribers {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.subscribeBtn {
+  background-color: white !important;
+  color: var(--background-dark) !important;
+  font-weight: 700;
+  margin-left: 1rem;
+}
+.subscribeBtn:hover {
+  background-color: #e2e8f0 !important;
+}

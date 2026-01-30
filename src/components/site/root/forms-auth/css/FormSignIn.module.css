@@ -1,0 +1,52 @@
+.container {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  background-color: rgba(22, 22, 42, 0.4);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.inputGroup {
+  margin-bottom: 0.5rem;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.forgotLink {
+  font-size: 0.75rem;
+  color: #30FFD0;
+  text-decoration: none;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.forgotLink:hover {
+  text-decoration: underline;
+}
+
+.icon {
+  font-size: 1.25rem;
+  transition: transform 0.2s;
+}
+
+.buttonContent {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.button:hover .icon {
+  transform: translateX(0.25rem);
+}

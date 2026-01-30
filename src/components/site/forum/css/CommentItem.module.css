@@ -1,0 +1,180 @@
+.wrapper {
+  margin-bottom: 1.5rem;
+}
+
+.comment {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  transition: background-color 0.3s;
+}
+
+.comment:hover {
+  background-color: var(--white-5);
+}
+
+.avatarWrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.badge {
+  position: absolute;
+  bottom: -0.25rem;
+  right: -0.25rem;
+  background-color: #334155 !important; /* slate-700 */
+}
+
+.content {
+  flex-grow: 1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.name {
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.name:hover {
+  color: var(--primary);
+}
+
+.time {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-left: 0.5rem;
+}
+
+.moreBtn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.comment:hover .moreBtn {
+  opacity: 1;
+}
+.moreBtn:hover {
+  color: white;
+}
+
+.message {
+  font-size: 0.875rem;
+  color: #cbd5e1; /* slate-300 */
+  line-height: 1.625;
+}
+
+.actions {
+  margin-top: 0.75rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.actionBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.actionBtn:hover {
+  color: var(--primary);
+}
+
+.deleteBtn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #ef4444;
+    display: flex;
+    align-items: center;
+}
+
+.deleteBtnHeader {
+    margin-left: auto;
+}
+
+.deleteIconSm {
+    font-size: 1rem; /* 16px */
+}
+
+.actionIcon {
+  font-size: 0.875rem;
+}
+
+.replies {
+  margin-left: 4rem; /* ml-16 */
+  margin-top: 0.5rem;
+  border-left: 2px solid var(--white-5);
+  padding-left: 1.5rem; /* pl-6 */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.replyItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  transition: background 0.3s;
+}
+.replyItem:hover {
+  background-color: var(--white-5);
+}
+
+.replyHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.25rem;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.replyName {
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: white;
+}
+
+.replyTime {
+  font-size: 0.625rem; /* 10px */
+  color: var(--text-muted);
+  margin-left: 0.5rem;
+}
+
+.replyMessage {
+  font-size: 0.75rem;
+  color: var(--text-muted); /* slate-400 */
+}
+
+.replyBtn {
+  margin-top: 0.5rem;
+  font-size: 0.625rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.replyBtn:hover {
+  color: var(--primary);
+}

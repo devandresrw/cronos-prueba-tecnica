@@ -1,0 +1,99 @@
+.container {
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  margin-bottom: 2.5rem; /* mb-10 */
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.avatarWrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.badge {
+  position: absolute;
+  bottom: -0.25rem;
+  right: -0.25rem;
+}
+
+.inputArea {
+  flex-grow: 1;
+}
+
+.userInfo {
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+
+.userName {
+  font-weight: 600;
+  color: white;
+}
+
+.userRole {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-left: 0.5rem;
+}
+
+.textarea {
+  width: 100%;
+  background-color: var(--white-5);
+  border: 1px solid var(--white-10);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  font-size: 0.875rem;
+  color: white;
+  min-height: 100px;
+  resize: none;
+  outline: none;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 1px var(--primary);
+}
+
+.footer {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tools {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.toolBtn {
+  color: var(--text-muted);
+}
+.toolBtn:hover {
+  color: var(--primary);
+  background-color: var(--white-5);
+}
+
+.avatarPlaceholder {
+  width: 48px; /* lg size roughly */
+  height: 48px;
+  background-color: var(--white-10);
+  border-radius: 0.5rem; /* rounded shape */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+}
+
+.avatarIcon {
+  font-size: 24px;
+}

@@ -1,0 +1,141 @@
+.section {
+  max-width: 48rem; /* max-w-3xl */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 1.25rem; /* xl */
+  font-weight: 700;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.iconPrimary {
+  color: var(--primary);
+}
+
+.count {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.skeletonItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  background: rgba(22, 22, 42, 0.5); /* glass-panel opacity-60 */
+  border: 1px solid rgba(var(--primary-rgb), 0.2);
+  margin-bottom: 1.5rem;
+}
+
+.skeletonContent {
+  flex-grow: 1;
+}
+
+.skeletonHeader {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.skeletonLine {
+  margin-bottom: 0.5rem;
+}
+
+.loadMore {
+  display: flex;
+  justify-content: center;
+  padding-top: 1.5rem;
+}
+
+.loadMoreBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--white-10);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.loadMoreBtn:hover {
+  color: white;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.floatingBtnWrapper {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 50;
+}
+
+.floatingBtn {
+  position: relative;
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: var(--primary);
+  color: var(--background-dark);
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.floatingBtn:hover {
+  transform: scale(1.1);
+}
+
+.floatingIcon {
+  font-size: 1.5rem;
+  transition: transform 0.3s;
+}
+
+.floatingBtn:hover .floatingIcon {
+  transform: rotate(12deg);
+}
+
+.tooltip {
+  position: absolute;
+  right: 100%;
+  margin-right: 1rem;
+  background-color: var(--surface-dark);
+  color: white;
+  font-size: 0.75rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  border: 1px solid var(--white-10);
+  transition: opacity 0.2s;
+}
+
+.floatingBtn:hover .tooltip {
+  opacity: 1;
+}

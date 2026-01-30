@@ -1,0 +1,64 @@
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  padding-top: 0.875rem;
+  padding-bottom: 0.875rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  color: #ffffff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  transition: all 0.2s;
+  outline: none;
+}
+
+.input::placeholder {
+  color: #64748b;
+}
+
+.input:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.input:focus {
+  border-color: rgba(48, 255, 208, 0.5);
+  box-shadow: 0 0 0 3px rgba(48, 255, 208, 0.5);
+}
+
+.inputWithIcon {
+  padding-left: 3rem;
+}
+
+.icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #64748b;
+  font-size: 1.25rem;
+  pointer-events: none;
+  user-select: none;
+}
+
+.inputError {
+  border-color: #ef4444;
+}
+
+.inputError:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.errorMessage {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: #ef4444;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}

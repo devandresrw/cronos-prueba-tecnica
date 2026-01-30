@@ -1,0 +1,11 @@
+.label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+  margin-left: 0.25rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}

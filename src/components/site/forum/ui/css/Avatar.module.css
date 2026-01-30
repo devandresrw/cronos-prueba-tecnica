@@ -1,0 +1,48 @@
+.avatar {
+  object-fit: cover;
+  background-color: var(--surface-dark);
+  border: 1px solid var(--white-10);
+  flex-shrink: 0;
+}
+
+.sm {
+  width: 2rem;
+  height: 2rem;
+}
+.md {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.lg {
+  width: 3rem;
+  height: 3rem;
+}
+
+.circle {
+  border-radius: 50%;
+}
+.rounded {
+  border-radius: 0.5rem;
+}
+
+.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white-10);
+  color: var(--text-muted);
+  border: 1px solid var(--white-10);
+  flex-shrink: 0;
+}
+
+.placeholderIcon {
+  font-size: 1.25rem;
+}
+
+.lg .placeholderIcon {
+  font-size: 1.5rem;
+}
+
+.sm .placeholderIcon {
+  font-size: 1rem;
+}
