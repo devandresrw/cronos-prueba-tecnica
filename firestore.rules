@@ -1,0 +1,80 @@
+// Firestore Rules version 2
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Función auxiliar para verificar autenticación
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Función auxiliar para verificar autoría
+    function isOwner(userId) {
+      return request.auth.uid == userId;
+    }
+
+    // Validación de esquema para creación de comentarios
+    function isValidComment() {
+      let incoming = request.resource.data;
+      // Validamos campos obligatorios básicos para la creación
+      // Nota: likeCount, likedBy, replyCount se inicializan en 0/vacío, 
+      // pero verificamos que content, authorId, postId existan.
+      let hasMandatoryFields = incoming.keys().hasAll(['content', 'authorId', 'postId', 'createdAt', 'parentId']);
+      
+      // Validación de tipos y longitud
+      let validContent = incoming.content is string && incoming.content.size() > 0 && incoming.content.size() < 2000;
+      let validAuthor = incoming.authorId == request.auth.uid;
+      let validParent = incoming.parentId == null || incoming.parentId is string;
+      
+      return hasMandatoryFields && validContent && validAuthor && validParent;
+    }
+
+    // Colección de usuarios
+    match /users/{userId} {
+      // Lectura pública (necesario para mostrar nombres de autores)
+      allow read: if true;
+      
+      // Crear: Permitir creación si el documento se crea con el UID correcto
+      // Esto permite que el servidor cree el usuario durante el registro
+      allow create: if request.resource.id == userId || 
+                       (isAuthenticated() && isOwner(userId));
+      
+      // Actualizar: Solo el usuario puede actualizar su propio documento
+      allow update: if isAuthenticated() && isOwner(userId);
+      
+      // Eliminar: Solo el usuario puede eliminar su propio documento
+      allow delete: if isAuthenticated() && isOwner(userId);
+    }
+
+    match /posts/{postId}/comments/{commentId} {
+      
+      // Lectura pública
+      allow read: if true;
+
+      // Crear: Solo auth, validando payload
+      allow create: if isAuthenticated() && isValidComment();
+
+      // Eliminar: Solo el autor del comentario puede borrarlo (Hard Delete, aunque usemos Soft Delete preferentemente)
+      allow delete: if isAuthenticated() && isOwner(resource.data.authorId);
+
+      // Editar / Actualizar
+      allow update: if isAuthenticated() && (
+        // Caso 1: Autor edita contenido (solo contenido y fecha)
+        (isOwner(resource.data.authorId) && 
+         request.resource.data.diff(resource.data).affectedKeys().hasOnly(['content', 'updatedAt', 'isEdited']))
+        ||
+        // Caso 2: Autor realiza Soft Delete
+        (isOwner(resource.data.authorId) && 
+         request.resource.data.diff(resource.data).affectedKeys().hasOnly(['content', 'updatedAt', 'isDeleted']))
+        ||
+        // Caso 3: Likes (Cualquier usuario autenticado puede actualizar likes)
+        // Idealmente validaríamos que solo se agregan/quitan a sí mismos, pero por simplicidad:
+        (request.resource.data.diff(resource.data).affectedKeys().hasOnly(['likeCount', 'likedBy']))
+        ||
+        // Caso 4: Respuestas (Actualizar replyCount al responder)
+        (request.resource.data.diff(resource.data).affectedKeys().hasOnly(['replyCount']))
+      );
+    }
+  }
+}
